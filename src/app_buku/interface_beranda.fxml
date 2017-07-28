@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app_buku.Interface_berandaController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="478.0" layoutX="5.0" stroke="BLACK" strokeType="INSIDE" width="775.0">
+         <fill>
+            <RadialGradient centerX="0.5222222222222223" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#0084ff" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </fill>
+      </Rectangle>
+      <ImageView fitHeight="232.0" fitWidth="289.0" layoutX="201.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../gambar/logo.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="574.0" layoutY="390.0" text="\@Copyright Prob-cyber">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Label layoutX="150.0" layoutY="275.0" text="Aplikasi Toko Buku Versi 1.0">
+         <font>
+            <Font name="System Bold Italic" size="29.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

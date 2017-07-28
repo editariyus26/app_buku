@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app_buku.Interface_aboutController">
+   <children>
+      <Label layoutX="244.0" layoutY="17.0" text="Tentang Kami">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font></Label>
+      <ImageView fitHeight="150.0" fitWidth="152.0" layoutX="74.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../gambar/edi.jpeg" />
+         </image></ImageView>
+      <ImageView fitHeight="150.0" fitWidth="152.0" layoutX="74.0" layoutY="242.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../gambar/hendra.JPG" />
+         </image></ImageView>
+      <Label layoutX="244.0" layoutY="82.0" text="Nama       : Edi Tariyus Cahyono">
+         <font>
+            <Font name="Monotype Corsiva" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="245.0" layoutY="108.0" text="Asal         : Probolinggo">
+         <font>
+            <Font name="Monotype Corsiva" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="245.0" layoutY="160.0" text="Instansi  : SMKN 1 Probolinggo">
+         <font>
+            <Font name="Monotype Corsiva" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="244.0" layoutY="134.0" text="C.P          : 082243416636">
+         <font>
+            <Font name="Monotype Corsiva" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="245.0" layoutY="242.0" text="Nama       : Hendra Dwi Saputra">
+         <font>
+            <Font name="Monotype Corsiva" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="246.0" layoutY="268.0" text="Asal         : Probolinggo">
+         <font>
+            <Font name="Monotype Corsiva" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="246.0" layoutY="320.0" text="Instansi  : SMK Nurul Jadid Probolinggo">
+         <font>
+            <Font name="Monotype Corsiva" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="245.0" layoutY="294.0" text="C.P          : 085230541547">
+         <font>
+            <Font name="Monotype Corsiva" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

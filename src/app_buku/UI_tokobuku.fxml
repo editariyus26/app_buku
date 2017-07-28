@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import validasi.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="485.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app_buku.UI_tokobukuController">
+   <children>
+      <TabPane prefHeight="485.0" prefWidth="775.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Transaksi Buku">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" height="239.0" layoutX="92.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" width="548.0">
+                           <fill>
+                              <LinearGradient endX="1.0" endY="1.0" startX="0.2523809523809523" startY="1.0">
+                                 <stops>
+                                    <Stop color="WHITE" />
+                                    <Stop color="#ff0f0f" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </fill>
+                        </Rectangle>
+                        <Separator layoutX="14.0" layoutY="42.0" prefWidth="748.0" />
+                        <Separator layoutX="13.0" layoutY="320.0" prefWidth="748.0" />
+                        <Label layoutX="23.0" layoutY="14.0" text="Transaksi Buku, Toko &quot;Prob Cyber&quot;" />
+                        <Label layoutX="130.0" layoutY="112.0" text="Nama" />
+                        <Label layoutX="130.0" layoutY="145.0" text="Judul" />
+                        <Label layoutX="130.0" layoutY="177.0" text="Penerbit" />
+                        <Label layoutX="130.0" layoutY="211.0" text="Harga" />
+                        <Label layoutX="130.0" layoutY="79.0" text="No. Id" />
+                        <Label layoutX="130.0" layoutY="242.0" text="Tgl. Pembelian" />
+                        <NumberTextField fx:id="txtId" layoutX="234.0" layoutY="75.0" onKeyTyped="#cekAngka" prefHeight="25.0" prefWidth="364.0" promptText="No Id" />
+                        <TextField fx:id="txtNama" layoutX="234.0" layoutY="108.0" prefHeight="25.0" prefWidth="364.0" promptText="Nama Anda" styleClass="text-field" />
+                        <TextField fx:id="txtJudul" layoutX="234.0" layoutY="141.0" prefHeight="25.0" prefWidth="365.0" promptText="Judul Buku" styleClass="text-field" />
+                        <ComboBox fx:id="cbPenerbit" editable="true" layoutX="234.0" layoutY="173.0" prefHeight="25.0" prefWidth="365.0" promptText="Penerbit: (Ex : Erlangga, Tiga Serangkai, Balai Pustaka, ...)" />
+                        <NumberTextField fx:id="txtHarga" layoutX="234.0" layoutY="207.0" onKeyTyped="#cekAngka2" prefHeight="25.0" prefWidth="366.0" promptText="Harga Buku" />
+                        <DatePicker fx:id="dpTgl" layoutX="234.0" layoutY="238.0" prefHeight="25.0" prefWidth="368.0" promptText="Tanggal/Bulan/Tahun" />
+                        <Button fx:id="btnSimpan" layoutX="197.0" layoutY="332.0" mnemonicParsing="false" onAction="#simpanData" styleClass="success" stylesheets="@bootstrap3.css" text="SIMPAN">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="FLOPPY_ALT" size="15.0" />
+                           </graphic></Button>
+                        <Button fx:id="btnUbah" layoutX="322.0" layoutY="332.0" mnemonicParsing="false" onAction="#ubahData" prefHeight="32.0" prefWidth="89.0" styleClass="warning" stylesheets="@bootstrap3.css" text="UBAH">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="PENCIL" size="15.0" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnHapus" layoutX="445.0" layoutY="332.0" mnemonicParsing="false" onAction="#hapusData" prefHeight="32.0" prefWidth="94.0" styleClass="danger" stylesheets="@bootstrap3.css" text="HAPUS">
+                           <graphic>
+                              <FontAwesomeIconView fill="#f8f8f8" glyphName="TRASH" size="15.0" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+            </content>
+               <graphic>
+                  <FontAwesomeIconView glyphName="CALCULATOR" />
+               </graphic>
+          </Tab>
+          <Tab text="Laporan / Cetak">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="456.0" prefWidth="749.0">
+                     <children>
+                        <Separator layoutX="14.0" layoutY="42.0" prefWidth="748.0" />
+                        <Separator layoutX="14.0" layoutY="364.0" prefWidth="748.0" />
+                        <TableView fx:id="tabel_buku" layoutX="14.0" layoutY="47.0" onMouseClicked="#pilihData" prefHeight="313.0" prefWidth="747.0">
+                          <columns>
+                            <TableColumn fx:id="colId" prefWidth="59.0" text="Id Buku" />
+                            <TableColumn fx:id="colNama" prefWidth="117.0" text="Nama" />
+                              <TableColumn fx:id="colJudul" minWidth="0.0" prefWidth="169.0" text="Judul" />
+                              <TableColumn fx:id="colPenerbit" prefWidth="133.0" text="Penerbit" />
+                              <TableColumn fx:id="colHarga" prefWidth="133.0" text="Harga" />
+                              <TableColumn fx:id="colTanggal" prefWidth="135.0" text="Tanggal" />
+                          </columns>
+                        </TableView>
+                        <TextField fx:id="txtCari" layoutX="171.0" layoutY="14.0" onKeyReleased="#cariData" promptText="Kata Kunci Pencarian" />
+                        <Label layoutX="14.0" layoutY="18.0" text="Cari Berdasarkan Judul Buku" />
+                        <Button fx:id="btnCetak" layoutX="686.0" layoutY="7.0" mnemonicParsing="false" onAction="#cetakData" styleClass="info" stylesheets="@bootstrap3.css" text="Cetak">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="PRINT" size="15.0" />
+                           </graphic>
+                        </Button>
+                        <FontAwesomeIconView glyphName="BINOCULARS" layoutX="302.0" layoutY="33.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+               <graphic>
+                  <FontAwesomeIconView glyphName="BOOK" />
+               </graphic>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
